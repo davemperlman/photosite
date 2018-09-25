@@ -1,0 +1,160 @@
+@font-face {
+  font-family: 'Hilton Sans';
+  src: url("../hilton-sans.otf") format("opentype"); }
+
+body, html {
+  height: 100%;
+  font-family: 'Hilton Sans', sans-serif; }
+
+.brand {
+  font-size: 1.3rem;
+  position: fixed;
+  top: 2rem;
+  margin: auto;
+  display: block;
+  left: 0;
+  right: 0;
+  width: 14rem;
+  color: #999;
+  text-align: center;
+  transition: all .5s; }
+  @media screen and (max-width: 767px) {
+    .brand {
+      color: #999;
+      font-size: 1.5rem; } }
+
+.bg {
+  background-image: url("../_img/main.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+  @media screen and (max-width: 767px) {
+    .bg {
+      height: 50%;
+      margin-top: 25%;
+      margin-left: 10%;
+      margin-right: 10%; } }
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%;
+  /* 100% Full-height */
+  width: 0;
+  /* 0 width - change this with JavaScript */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Stay on top */
+  top: 0;
+  /* Stay at the top */
+  left: 0;
+  background-color: #111;
+  /* Black*/
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  padding-top: 60px;
+  /* Place content 60px from the top */
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in the sidenav */ }
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 1rem;
+  text-align: center;
+  white-space: nowrap;
+  color: #818181;
+  display: block;
+  transition: 0.3s; }
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1; }
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px; }
+
+#menu {
+  position: fixed;
+  font-size: 1.3rem;
+  top: 2rem;
+  left: 2rem; }
+
+.social {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  font-size: 2rem; }
+  .social li {
+    display: inline-block;
+    width: 2rem; }
+    .social li a {
+      color: #999;
+      transition: all .5s; }
+      .social li a:hover {
+        color: #bbb; }
+      @media screen and (max-width: 767px) {
+        .social li a {
+          color: #999;
+          font-size: 1.5rem; } }
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; }
+
+.gallery {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  height: 50%;
+  margin-top: 25%; }
+  .gallery .responsive-image {
+    max-width: 100%; }
+  .gallery .cell img {
+    display: block; }
+
+@media screen and (min-width: 600px) {
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row; }
+  .cell {
+    width: 50%; } }
+
+@media screen and (min-width: 1000px) {
+  .cell {
+    width: calc(100% / 3); } }
+
+.cell {
+  margin: 1rem; }
+
+@media screen and (min-width: 600px) {
+  .cell {
+    width: calc(50% - 2rem); } }
+
+@media screen and (min-width: 1000px) {
+  .cell {
+    width: calc(33.3333% - 2rem); } }
+
+.show {
+  position: relative; }
+  .show .grid {
+    display: block; }
+    .show .grid .cell {
+      width: 100%; }
+      .show .grid .cell .responsive-image {
+        position: absolute; }
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px; }
+  .sidenav a {
+    font-size: 18px; } }

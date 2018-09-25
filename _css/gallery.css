@@ -1,0 +1,35 @@
+.image-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8); }
+  .image-container .close {
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    right: 15px;
+    background-color: #000;
+    z-index: 10;
+    color: #fff;
+    cursor: pointer; }
+  .image-container img {
+    height: 100%;
+    margin: 0 auto;
+    display: block; }
+  .image-container .previous, .image-container .next {
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    display: inline;
+    position: fixed;
+    top: 40%;
+    cursor: pointer; }
+  .image-container .previous {
+    left: 0; }
+  .image-container .next {
+    right: 0; }

@@ -1,0 +1,48 @@
+.image-container{
+   display: none;
+   position: fixed;
+   top:0;
+   left: 0;
+   width:100vw;
+   height: 100vh;
+   background-color:rgba(255,255,255,.8);
+
+   .close{
+      padding: 10px;
+      position: absolute;
+      top:0;
+      right:15px;
+      background-color:#000;
+      z-index:10;
+      color:#fff;
+      cursor: pointer;
+   }
+
+   img{
+      height: 100%;
+      margin: 0 auto;
+      display: block;
+   }
+
+   %next{
+      padding: 10px;
+      background-color:#000;
+      color:#fff;
+      font-weight: bold;
+      text-align: center;
+      display: inline;
+      position: fixed;
+      top:40%;
+      cursor: pointer;
+   }
+
+   .previous{
+      @extend %next;
+      left:0;
+   }
+
+   .next{
+      @extend %next;
+      right:0;
+   }
+}
