@@ -1,10 +1,23 @@
 @font-face {
   font-family: 'Hilton Sans';
   src: url("../hilton-sans.otf") format("opentype"); }
-
 body, html {
   height: 100%;
   font-family: 'Hilton Sans', sans-serif; }
+
+.index .brand, .index .social, .index #menu {
+  color: #fff; }
+  .index .brand a, .index .social a, .index #menu a {
+    color: #fff; }
+    .index .brand a strong, .index .social a strong, .index #menu a strong {
+      color: #fff; }
+  @media screen and (max-width: 767px) {
+    .index .brand, .index .social, .index #menu {
+      color: #bbb; }
+      .index .brand a, .index .social a, .index #menu a {
+        color: #bbb; }
+        .index .brand a strong, .index .social a strong, .index #menu a strong {
+          color: #bbb; } }
 
 .brand {
   font-size: 1.3rem;
@@ -18,9 +31,21 @@ body, html {
   color: #999;
   text-align: center;
   transition: all .5s; }
+  .brand a {
+    text-decoration: none;
+    color: #bbb;
+    transition: all .5s; }
+    .brand a strong {
+      color: #999;
+      transition: all .5s; }
+    .brand a:hover {
+      color: #ddd; }
+      .brand a:hover strong {
+        color: #ccc; }
   @media screen and (max-width: 767px) {
     .brand {
       color: #999;
+      position: relative;
       font-size: 1.5rem; } }
 
 .bg {
@@ -83,15 +108,27 @@ body, html {
 
 #menu {
   position: fixed;
+  color: #999;
+  transition: all .5s;
   font-size: 1.3rem;
   top: 2rem;
   left: 2rem; }
+  #menu:hover {
+    color: #bbb;
+    cursor: pointer; }
+  @media screen and (max-width: 767px) {
+    #menu {
+      position: relative; } }
 
 .social {
+  transition: all .5s;
   position: fixed;
-  bottom: 2rem;
+  top: 2rem;
   right: 2rem;
   font-size: 2rem; }
+  @media screen and (max-width: 767px) {
+    .social {
+      position: absolute; } }
   .social li {
     display: inline-block;
     width: 2rem; }
@@ -110,11 +147,14 @@ body, html {
   transition: margin-left .5s; }
 
 .gallery {
-  width: 90%;
+  width: 80%;
   max-width: 1200px;
   margin: auto;
   height: 50%;
   margin-top: 25%; }
+  @media screen and (max-width: 767px) {
+    .gallery {
+      width: 90%; } }
   .gallery .responsive-image {
     max-width: 100%; }
   .gallery .cell img {
@@ -125,24 +165,21 @@ body, html {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row; }
+
   .cell {
     width: 50%; } }
-
 @media screen and (min-width: 1000px) {
   .cell {
     width: calc(100% / 3); } }
-
 .cell {
   margin: 1rem; }
 
 @media screen and (min-width: 600px) {
   .cell {
     width: calc(50% - 2rem); } }
-
 @media screen and (min-width: 1000px) {
   .cell {
     width: calc(33.3333% - 2rem); } }
-
 .show {
   position: relative; }
   .show .grid {
@@ -152,9 +189,15 @@ body, html {
       .show .grid .cell .responsive-image {
         position: absolute; }
 
+.image-container img {
+  height: 50%; }
+
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidenav {
     padding-top: 15px; }
+
   .sidenav a {
     font-size: 18px; } }
+
+/*# sourceMappingURL=main.css.map */

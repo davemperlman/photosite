@@ -8,6 +8,28 @@ body, html {
 	font-family: 'Hilton Sans', sans-serif;
 }
 
+.index {
+	.brand, .social, #menu {
+		color: #fff;
+		a {
+			color: #fff;
+			strong {
+				color: #fff;
+			}
+		}
+		@media screen and (max-width: 767px) {
+			color: #bbb;
+			a {
+			color: #bbb;
+			strong {
+				color: #bbb;
+			}
+		}
+			
+		}
+	}
+}
+
 .brand {
 	font-size: 1.3rem;
 	position: fixed;
@@ -20,8 +42,24 @@ body, html {
 	color: #999;
 	text-align: center;
 	transition: all .5s;
+	a {
+		text-decoration: none;
+		color: #bbb;
+		transition: all .5s;
+		strong {
+			color: #999;
+			transition: all .5s;
+		}
+		&:hover {
+			color: #ddd;
+			strong {
+				color: #ccc;
+			}
+		}
+	}
 	@media screen and (max-width: 767px) {
     	color: #999;
+    	position: relative;
     	font-size: 1.5rem;
     }
 }
@@ -85,17 +123,30 @@ body, html {
 
 #menu {
 	position: fixed;
+	color: #999;
+	transition: all .5s;
+	&:hover {
+		color: #bbb;
+		cursor: pointer;
+	}
 	font-size: 1.3rem;
 	top: 2rem;
 	left: 2rem;
+	@media screen and (max-width: 767px) {
+		position: relative;
+	}
 }
 
 // Social Footer
 .social {
+	transition: all .5s;
 	position: fixed;
-	bottom: 2rem;
+	top: 2rem;
 	right: 2rem;
 	font-size: 2rem;
+	@media screen and (max-width: 767px) {
+		position: absolute;
+	}
 	li {
 		display: inline-block;
 		width: 2rem;
@@ -122,12 +173,14 @@ body, html {
 // Gallery Pages
 
 .gallery {
-	width: 90%;
+	width: 80%;
 	max-width: 1200px;
 	margin: auto;
 	height: 50%;
 	margin-top: 25%;
-
+	@media screen and (max-width: 767px) {
+		width: 90%;
+	}
 	.responsive-image {
   		max-width: 100%;
 	}
@@ -182,6 +235,11 @@ body, html {
 				//display: none;
 			}
 		}
+	}
+}
+.image-container {
+	img {
+		height: 50%;
 	}
 }
 

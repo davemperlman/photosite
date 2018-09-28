@@ -7,42 +7,60 @@
    height: 100vh;
    background-color:rgba(255,255,255,.8);
 
+   i {
+      font-size: 2rem;
+   }
+
    .close{
       padding: 10px;
       position: absolute;
-      top:0;
-      right:15px;
-      background-color:#000;
+      bottom: 2rem;
+      right: 0;
+      left: 0;
+      width: 2rem;
+      margin: 0 auto;
+      text-align: center;
+      //background-color:#000;
       z-index:10;
-      color:#fff;
+      color:#bbb;
       cursor: pointer;
    }
 
    img{
-      height: 100%;
+      height: 50%;
       margin: 0 auto;
+      margin-top: 25%;
       display: block;
    }
 
    %next{
       padding: 10px;
-      background-color:#000;
-      color:#fff;
+      //background-color:#000;
+      color:#bbb;
       font-weight: bold;
       text-align: center;
       display: inline;
       position: fixed;
       top:40%;
       cursor: pointer;
+      @media screen and (max-width: 767px) {
+         top: 80%;
+      }
    }
 
    .previous{
       @extend %next;
       left:0;
+      @media screen and (max-width: 767px) {
+         left: 20%;
+      }
    }
 
    .next{
       @extend %next;
       right:0;
+      @media screen and (max-width: 767px) {
+         right: 20%;
+      }
    }
 }
