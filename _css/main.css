@@ -3,7 +3,8 @@
   src: url("../hilton-sans.otf") format("opentype"); }
 body, html {
   height: 100%;
-  font-family: 'Hilton Sans', sans-serif; }
+  font-family: 'Hilton Sans', sans-serif;
+  background-color: #000; }
 
 .brand {
   font-size: 1.3rem;
@@ -23,8 +24,10 @@ body, html {
       font-size: 1.5rem; } }
 
 .bg {
-  background-image: url("../_img/main.jpg");
-  height: 100%;
+  background: linear-gradient(to top, black, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../_img/main2.jpg");
+  height: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
@@ -34,6 +37,25 @@ body, html {
       margin-top: 25%;
       margin-left: 10%;
       margin-right: 10%; } }
+
+.menu {
+  display: block;
+  margin: 5rem auto;
+  text-align: center; }
+  .menu li {
+    display: inline-block;
+    width: 10%; }
+
+.carousel {
+  padding: 0;
+  margin: 0 auto;
+  height: 15%;
+  width: 100%;
+  max-width: 1000px; }
+  .carousel .carousel-item {
+    width: 24.5%;
+    padding: 0;
+    margin: 0; }
 
 /* The side navigation menu */
 .sidenav {
