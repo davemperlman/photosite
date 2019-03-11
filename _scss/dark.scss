@@ -1,0 +1,13 @@
+.bg {
+	background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,0)), url('../_img/main2.jpg');
+}
+
+.menu {
+	 a {
+            text-decoration: none;
+            color: #fff;
+        }
+        .active {
+                color: #CBA135;
+            }
+}

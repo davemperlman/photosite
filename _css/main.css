@@ -2,6 +2,7 @@
   font-family: 'Hilton Sans';
   src: url("../hilton-sans.otf") format("opentype"); }
 body, html {
+  transition: background 2s;
   height: 100%;
   font-family: 'Hilton Sans', sans-serif;
   background-color: #000; }
@@ -38,6 +39,9 @@ body, html {
       margin-left: 10%;
       margin-right: 10%; } }
 
+.hidden {
+  display: none; }
+
 .menu {
   display: block;
   margin: 5rem auto;
@@ -45,12 +49,18 @@ body, html {
   .menu li {
     display: inline-block;
     width: 10%; }
+    .menu li a {
+      text-decoration: none;
+      color: #fff; }
+    .menu li .active {
+      color: #CBA135; }
+    .menu li i {
+      font-size: 2rem; }
 
 .carousel {
   padding: 0;
-  margin: 0 auto;
   height: 15%;
-  width: 100%;
+  width: 90%;
   max-width: 1000px; }
   .carousel .carousel-item {
     width: 24.5%;

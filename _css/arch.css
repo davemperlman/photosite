@@ -1,0 +1,13 @@
+body {
+  background-color: #fff; }
+  body i {
+    color: #333; }
+  body .active {
+    color: #cba135; }
+
+.bg {
+  background: url("../_img/arch1.jpg") center;
+  background-size: cover;
+  max-width: 100%; }
+
+/*# sourceMappingURL=arch.css.map */
