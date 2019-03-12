@@ -1,54 +1,147 @@
 @font-face {
   font-family: 'Hilton Sans';
   src: url("../hilton-sans.otf") format("opentype"); }
+@keyframes fade {
+  0% {
+    opacity: 0; }
+  25% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 body, html {
-  transition: background 2s;
   height: 100%;
-  font-family: 'Hilton Sans', sans-serif;
-  background-color: #000; }
+  font-family: 'Hilton Sans', sans-serif; }
 
-.brand {
-  font-size: 1.3rem;
-  position: fixed;
-  top: 2rem;
-  margin: auto;
-  display: block;
+.banner {
+  animation: fade 1s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+.body-set-arch {
+  background-color: #fff;
+  color: #333; }
+  .body-set-arch .banner {
+    background: url("../_img/arch-1.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover; }
+  .body-set-arch ul li a i {
+    color: #333;
+    transition: color 1s; }
+  .body-set-arch .menu ul li a.active i {
+    color: #cba135 !important;
+    transition: all 1s; }
+
+.body-set-dark {
+  background-color: #000;
+  color: #fff; }
+  .body-set-dark .banner {
+    background: url("../_img/main2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain; }
+  .body-set-dark ul li a i {
+    color: #fff;
+    transition: all 1s; }
+  .body-set-dark .menu ul li a.active i {
+    color: #cba135 !important;
+    transition: all 1s; }
+
+.body-set-people {
+  background-color: #fff;
+  color: #333; }
+  .body-set-people .banner {
+    background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("../_img/people2.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover; }
+  .body-set-people ul li a i {
+    color: #333;
+    transition: color 1s; }
+  .body-set-people .menu ul li a.active i {
+    color: #cba135 !important;
+    transition: all 1s; }
+
+.contact-form {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
   left: 0;
   right: 0;
-  width: 14rem;
-  color: #999;
-  text-align: center;
-  transition: all .5s; }
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 11; }
+  .contact-form form {
+    display: block;
+    position: absolute;
+    border: 2px #fff solid;
+    border-radius: 25px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 95%;
+    height: 95%;
+    margin: auto; }
+    .contact-form form input {
+      display: block;
+      margin: 2rem auto; }
+
+.brand {
+  background: url(../_img/brand.png) no-repeat;
+  background-position: 25px 0px;
+  background-size: contain;
+  display: block;
+  width: 20%;
+  min-width: 300px;
+  max-height: 150px;
+  height: 150px;
+  margin: 2rem auto; }
   @media screen and (max-width: 767px) {
     .brand {
-      color: #999;
-      font-size: 1.5rem; } }
+      height: 100px;
+      background-position: center; } }
 
 .bg {
-  background: linear-gradient(to top, black, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../_img/main2.jpg");
+  position: relative;
   height: 80%;
-  max-width: 1000px;
-  margin: 0 auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; }
+  top: 0;
+  margin: 0 auto; }
   @media screen and (max-width: 767px) {
     .bg {
       height: 50%;
-      margin-top: 25%;
-      margin-left: 10%;
-      margin-right: 10%; } }
+      margin-top: 25%; } }
 
 .hidden {
   display: none; }
 
 .menu {
   display: block;
+  position: absolute;
+  top: 10rem;
+  left: 0;
+  right: 0;
   margin: 5rem auto;
   text-align: center; }
+  @media screen and (max-width: 767px) {
+    .menu {
+      width: 150px;
+      top: 5rem; } }
   .menu li {
     display: inline-block;
     width: 10%; }
+    @media screen and (max-width: 767px) {
+      .menu li {
+        width: 75px;
+        height: 75px;
+        float: left;
+        border: 2px #fff solid;
+        box-sizing: border-box; } }
     .menu li a {
       text-decoration: none;
       color: #fff; }
@@ -56,16 +149,28 @@ body, html {
       color: #CBA135; }
     .menu li i {
       font-size: 2rem; }
+      @media screen and (max-width: 767px) {
+        .menu li i {
+          font-size: 3rem;
+          line-height: 1.5; } }
 
 .carousel {
-  padding: 0;
-  height: 15%;
-  width: 90%;
-  max-width: 1000px; }
+  padding-top: 5rem;
+  margin: 0 auto;
+  height: 20%;
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto; }
   .carousel .carousel-item {
-    width: 24.5%;
+    display: flex;
+    max-height: 100%;
     padding: 0;
-    margin: 0; }
+    margin: 0;
+    margin-right: 8px; }
+    .carousel .carousel-item:last-child {
+      margin-right: 0; }
 
 /* The side navigation menu */
 .sidenav {
@@ -120,7 +225,7 @@ body, html {
 
 .social {
   position: fixed;
-  bottom: 2rem;
+  top: 2rem;
   right: 2rem;
   font-size: 2rem; }
   .social li {

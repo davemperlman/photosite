@@ -2,57 +2,96 @@
 	$title = 'Dave Perlman | Photographer';
 	require_once 'parts/header.php'; 
 ?>
+	<div class="contact-form">
+		<form action="">
+			<input type="text">
+			<input type="text">
+		</form>
+		<button class="close"></button>
+	</div>
 	<div class="bg">
-		
+		<!-- <div class="arch" data-info='body-set-arch'>
+		</div>
+		<div class="dark" data-info='body-set-dark'>
+		</div> -->
+		<div class="banner">
+			
+		</div>
 	</div>
-
-	<div class="bg bg-arch hidden">
-		
-	</div>
-
-	<div class="bg bg-people hidden">
-		
-	</div>
-
-	<div class="bg contact hidden">
-		
-	</div>
+	
 
 	<div class="menu">
 		<ul>
-			<li><a data-target="_css/arch.css" href="#">
+			<li><a class="nav active" data-target="body-set-dark" data-carousel='dark' href="#">
 				<i class="fas fa-moon"></i>
 			</a></li>
-			<li><a data-target=".bg-arch" href="#">
+			<li><a class="nav" data-target="body-set-arch" data-carousel='arch' href="#">
 				<i class="fas fa-building"></i>
 			</a></li>
-			<li><a data-target=".bg-people" href="#">
+			<li><a class="nav" data-target="body-set-people" data-carousel='people' href="#">
 				<i class="fas fa-users"></i>
 			</a></li>
-			<li><a href="#">
+			<li><a class="nav contact" href="#">
 				<i class="fas fa-envelope"></i>
 			</a></li>
 		</ul>
 	</div>
 	
+	<!-- <?php require_once 'parts/carousel.php'; ?> -->
 	<div class="carousel">
-		<?php $files = scandir('_img/dark'); ?>
-		<?php foreach ($files as $key): ?>
-			<img class="carousel-item" src="_img/dark/<?php echo $key ?>" alt="">
-		<?php endforeach ?>
+
+	<script>
+		
+		function getCarousel(name) {
+				if (name) {
+					name = name
+				}
+		
+		$.get( 'parts/carousel.php', {dir: name} ).done(function(data){
+			$('.carousel').append(data).hide().fadeIn();
+		});
+		}
+
+		getCarousel('dark');
+		
+	</script>
+
 	</div>
 
 
 	<!-- JS -->
 
 	<script>
-		$('a').click( function(event) {
+
+		$('.nav').click( function(event) {
+			if ($(this).hasClass('active')) {
+				return;
+			}
+
+			if ($(this).hasClass('contact')) {
+				$('.contact-form').fadeIn();
+				return;
+			}
 			event.preventDefault();
+			current = $('.active').data('target');
+			// //$(current).fadeOut(500);
 			$('a').removeClass('active');
 			$(this).addClass('active');
-			target = $(this).data('target');
-			$('#colorpicker').attr('href', target);
+			target = $(this).data('target');	
+			// //$(target).fadeIn(500);
+			// scheme = ($(target).data('info'));
+			$('body').removeClass();
+			$('body').addClass(target);
+			var name = $(this).data('carousel');
+			$('.carousel').empty();
+			getCarousel(name);
+			
 		});
+
+		$('.close').click(function() {
+			$(this).parent('.contact-form').fadeOut();
+		});
+		
 	</script>
 
 <?php 
